@@ -30,7 +30,7 @@ public class FilmeTest {
 	
 	@Test
 	@DisplayName("Todos os atributos devem ser preenchidos corretamente quando o filme for criado")
-	void testeDePreenchimentoDosAtributos() {
+	void deve_Preencher_Todos_Atributos_Quando_Filme_Criado() {
 		assertAll(
 				() -> assertEquals("F01", filme.getId()),
 				() -> assertEquals("Quebrando Regras", filme.getTitulo()),
@@ -44,7 +44,7 @@ public class FilmeTest {
 	
 	@Test
 	@DisplayName("O filme deve conter gêneros quando criado")
-	void testeDePreenchimentoDosGeneros() {
+	void deve_Conter_Generos_Quando_Filme_Criado() {
 		List<Genero> generos = filme.getGeneros();
 		assertAll(
 				() -> assertTrue(generos.contains(Genero.ACAO)),
@@ -55,7 +55,7 @@ public class FilmeTest {
 	
 	@Test
 	@DisplayName("Filmes com mesmo id devem ser considerados iguais")
-	void testeDeFilmesIguais() { 
+	void deve_Considerar_Iguais_Filmes_Com_Mesmo_Id() { 
 		Filme outroFilmeComMesmoId = new Filme("F01", "Quebrando a Banca", 2008, 123, Arrays.asList(Genero.ACAO),
 				ClassificacaoEtaria.QUATORZE, Idioma.INGLES, 68);
 		assertEquals(filme.getId(), outroFilmeComMesmoId.getId());
@@ -64,7 +64,7 @@ public class FilmeTest {
 	
 	@Test
 	@DisplayName("Filmes com id distintos devem ser considerados diferentes")
-	void testeDeFilmesDiferentes() {
+	void deve_Considerar_Diferentes_Filmes_Com_Id_Distinto() {
 		Filme filmeDistinto = new Filme("F02", "Batman: O Cavaleiro das Trevas", 2008, 152, Arrays.asList(Genero.ACAO),
 				ClassificacaoEtaria.QUATORZE, Idioma.INGLES, 91);
 		assertNotEquals(filme, filmeDistinto);
