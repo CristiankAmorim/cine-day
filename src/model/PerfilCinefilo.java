@@ -30,7 +30,7 @@ public class PerfilCinefilo {
     private ClassificacaoEtaria classificacaoMaxima;
     private final List<Idioma> idiomasAceitos;
     private final Set<String> historicoFilmesAssistidos;
-    private final Map<String, Integer> notasFilmes;
+    private final Map<Filme, Integer> notasFilmes;
 	
 	public PerfilCinefilo() {
 		this.pesoDoGenero = new EnumMap<>(Genero.class);
@@ -73,10 +73,11 @@ public class PerfilCinefilo {
 	 * @param idFilme
 	 * @param nota
 	 */
-	public void atribuirNotaAoFilme(String idFilme, int nota) {
+	public void atribuirNotaAoFilme(Filme filme, int nota) {
 		if(nota < NOTA_MINIMA_FILME || nota > NOTA_MAXIMA_FILME) {
 			throw new NotaInvalidaException("Nota inválida. A nota deve ser entre " + NOTA_MINIMA_FILME + " e " + NOTA_MAXIMA_FILME);
 		}
+		notasFilmes.put(filme, nota);
 	}
 	
 	/**
@@ -109,12 +110,16 @@ public class PerfilCinefilo {
 	 * @param idFilme
 	 * @return
 	 */
-	public int verificarNotaDoFilme(String idFilme) {
-		return this.notasFilmes.get(idFilme);
+	public int verificarNotaDoFilme(Filme filme) {
+		return this.notasFilmes.get(filme);
 	}
 
 	public Map<Genero, Double> getPesoDoGenero() {
 		return pesoDoGenero;
+	}
+	
+	public double getPesoDoGenero(Genero genero) {
+		return pesoDoGenero.get(genero);
 	}
 
 	public int getDuracaoMinimaMinutos() {
@@ -137,7 +142,7 @@ public class PerfilCinefilo {
 		return historicoFilmesAssistidos;
 	}
 
-	public Map<String, Integer> getNotasFilmes() {
+	public Map<Filme, Integer> getNotasFilmes() {
 		return notasFilmes;
 	}
 
