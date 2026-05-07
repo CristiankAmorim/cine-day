@@ -14,4 +14,8 @@ public class FiltroFilmes {
 	private boolean classificacaoAceitavel(Filme filme, PerfilCinefilo perfil) {
 		return filme.getClassificacao().dentroDaClassificacaoMaxima(perfil.getClassificacaoMaxima());
 	}
+	
+	private boolean idiomasAceitos(Filme filme, PerfilCinefilo perfil) {
+		return perfil.getIdiomasAceitos().isEmpty() || perfil.getIdiomasAceitos().contains(filme.getIdioma());
+	}
 }
