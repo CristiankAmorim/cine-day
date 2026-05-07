@@ -29,7 +29,7 @@ public class PerfilCinefilo {
     private int duracaoMaximaMinutos;
     private ClassificacaoEtaria classificacaoMaxima;
     private final List<Idioma> idiomasAceitos;
-    private final Set<String> historicoFilmesAssistidos;
+    private final Set<Filme> historicoFilmesAssistidos;
     private final Map<Filme, Integer> notasFilmes;
 	
 	public PerfilCinefilo() {
@@ -84,8 +84,8 @@ public class PerfilCinefilo {
 	 * Armazena um filme já assistido em uma lista.
 	 * @param idFilme
 	 */
-	public void marcarFilmeComoAssistido(String idFilme) {
-		this.historicoFilmesAssistidos.add(idFilme);
+	public void marcarFilmeComoAssistido(Filme filme) {
+		this.historicoFilmesAssistidos.add(filme);
 	}
 	
 	/**
@@ -101,8 +101,8 @@ public class PerfilCinefilo {
 	 * @param idFilme
 	 * @return
 	 */
-	public boolean filmeJaAssistido(String idFilme) {
-		return this.historicoFilmesAssistidos.contains(idFilme);
+	public boolean filmeJaAssistido(Filme filme) {
+		return this.historicoFilmesAssistidos.contains(filme);
 	}
 	
 	/**
@@ -138,7 +138,7 @@ public class PerfilCinefilo {
 		return idiomasAceitos;
 	}
 
-	public Set<String> getHistoricoFilmesAssistidos() {
+	public Set<Filme> getHistoricoFilmesAssistidos() {
 		return historicoFilmesAssistidos;
 	}
 
