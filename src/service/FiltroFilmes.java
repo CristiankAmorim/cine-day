@@ -1,7 +1,7 @@
 package service;
 
 import java.util.Collections;
-import java.util.Set;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import model.Filme;
@@ -16,16 +16,16 @@ public class FiltroFilmes {
 	 * @param perfil
 	 * @return
 	 */
-	public Set<Filme> filtrar(Set<Filme> filmes, PerfilCinefilo perfil) {
+	public List<Filme> filtrar(List<Filme> filmes, PerfilCinefilo perfil) {
 		if(filmes.isEmpty() || filmes == null) {
-			return Collections.emptySet();
+			return Collections.emptyList();
 		}
-		return (Set<Filme>) filmes.stream()
+		return (List<Filme>) filmes.stream()
 				.filter(filme -> naoFoiAssistido(filme, perfil))
 				.filter(filme -> classificacaoAceitavel(filme, perfil))
 				.filter(filme -> idiomasAceitos(filme, perfil))
 				.filter(filme -> nenhumGeneroBloqueado(filme, perfil))
-				.collect(Collectors.toSet());
+				.collect(Collectors.toList());
 	}
 	
 	private boolean naoFoiAssistido(Filme filme, PerfilCinefilo perfil) {
