@@ -78,4 +78,12 @@ public class RecomendadorService {
 				.collect(Collectors.toList());
 	}
 	
+	private void registrarRecomendacaoNoHistorico(Usuario usuario, List<Recomendacao> recomendacoes) {
+		try {
+			historicoUsuario.registrarRecomendacao(usuario, recomendacoes);
+		} catch(Exception e) {
+			System.out.println("Falha ao registrar recomendação no histórico: " + e.getMessage());
+		}
+	}
+	
 }
