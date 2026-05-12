@@ -39,7 +39,7 @@ public class CalculadoraScore {
 		return Math.min(SCORE_MAXIMO, Math.max(SCORE_MINIMO, scoreTotal)); // Função para evitar que o score fique fora do limite (0.0 a 100.0.
 	}                                                                      // Math.min retorna o menor valor da comparação.
 	                                                                       // Math.max retorna o maior valor da comparação.
-	private double calcularScoreDoGenero(Filme filme, PerfilCinefilo perfil) {
+	public double calcularScoreDoGenero(Filme filme, PerfilCinefilo perfil) {
 		List<Genero> generos = filme.getGeneros();
 		
 		if(generos.isEmpty()) {
