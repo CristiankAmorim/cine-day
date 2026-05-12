@@ -86,4 +86,16 @@ public class RecomendadorService {
 		}
 	}
 	
+	private void notificarSeNotificacaoHabilitada(Usuario usuario, List<Recomendacao> recomendacoes) {
+		if(!usuario.isNotificacoesHabilitadas()) {
+			System.out.println("As notificações não estão habilitadas");
+		}
+		
+		try {
+			notificadorPush.enviarNotificacao(usuario, recomendacoes);
+		} catch (Exception e) {
+			System.out.println("Falha ao enviar notificação: " + e.getMessage());
+		}
+	}
+	
 }
