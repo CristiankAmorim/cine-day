@@ -5,7 +5,8 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="test/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="C:/Users/Klayw/Downloads/Instalações aula Mockito/byte-buddy-1.14.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Klayw/Downloads/Instalações aula Mockito/byte-buddy-agent-1.14.17.jar"/>
