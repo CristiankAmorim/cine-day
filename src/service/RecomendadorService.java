@@ -3,6 +3,7 @@ package service;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import model.Filme;
@@ -46,6 +47,21 @@ public class RecomendadorService {
 		//List<Recomendacao> recomendacoes = 
 	}*/
 
+	public Optional<Recomendacao> recomendarFilmeAleatorio(Usuario usuario) {
+		List<Filme> catalogo = buscarCatalogo();
+		List<Filme> filmesFiltrados = filtroFilmes.filtrar(catalogo, usuario.getPerfil());
+		
+		if(filmesFiltrados.isEmpty()) {
+			return Optional.empty();
+		}
+		
+		int indiceDoFilme = geradorAleatorio.sortearNumeroInteiro(0, filmesFiltrados.size() - 1);
+		Filme filmeSorteado = filmesFiltrados.get(indiceDoFilme);
+		double score = calculadoraScore.calcularScore(filmeSorteado, usuario.getPerfil());
+		
+		return Optional.of(new Recomendacao(filmeSorteado, score));
+	}
+	
 	private List<Filme> buscarCatalogo() {
 		try {
 			List<Filme> filmes = catalogoAPI.buscarTodos();
