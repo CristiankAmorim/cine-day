@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.PerfilIncompletoException;
+
 public class Usuario {
 	
 	private int id;
@@ -12,6 +14,9 @@ public class Usuario {
 		this.id = id;
 		this.nome = nome;
 		this.idade = idade;
+		if(perfil == null) {
+			throw new PerfilIncompletoException("O perfil não pode ser nulo");
+		}
 		this.perfil = perfil;
 		this.notificacoesHabilitadas = notificacoesHabilitadas;
 	}
