@@ -1,6 +1,7 @@
 package service;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,7 @@ public class RecomendadorService {
 		this.filtroFilmes = filtroFilmes;
 	}
 
-	public List<Recomendacao> recomendar(Usuario usuario, int topN) {
+	/*public List<Recomendacao> recomendar(Usuario usuario, int topN) {
 		List<Filme> catalogo = buscarCatalogo();
 		
 		if(catalogo.isEmpty()) {
@@ -43,7 +44,7 @@ public class RecomendadorService {
 		}
 		
 		//List<Recomendacao> recomendacoes = 
-	}
+	}*/
 
 	private List<Filme> buscarCatalogo() {
 		try {
@@ -64,6 +65,17 @@ public class RecomendadorService {
 	private Recomendacao criarRecomendacao(Filme filme, Usuario usuario) {
 		double score = calculadoraScore.calcularScore(filme, usuario.getPerfil());
 		return new Recomendacao(filme, score);
+	}
+	
+	private List<Recomendacao> ranquearRecomendacoes(List<Recomendacao> recomendacoes, int topN ) {
+		Comparator<Recomendacao> comparador = Comparator
+				.comparingDouble(Recomendacao::getScore).reversed()
+				.thenComparingDouble(r -> r.getFilme().getPopularidade())
+				.thenComparingInt(r -> geradorAleatorio.sortearNumeroInteiro(0, 1));
+		return recomendacoes.stream()
+				.sorted(comparador)
+				.limit(topN)
+				.collect(Collectors.toList());
 	}
 	
 }
