@@ -32,7 +32,7 @@ public class RecomendadorService {
 		this.filtroFilmes = filtroFilmes;
 	}
 
-	/*public List<Recomendacao> recomendar(Usuario usuario, int topN) {
+	public List<Recomendacao> recomendar(Usuario usuario, int topN) {
 		List<Filme> catalogo = buscarCatalogo();
 		
 		if(catalogo.isEmpty()) {
@@ -44,9 +44,20 @@ public class RecomendadorService {
 			return Collections.emptyList();
 		}
 		
-		//List<Recomendacao> recomendacoes = 
-	}*/
+		List<Recomendacao> recomendacoes = pontuarFilmes(filmesFiltrados, usuario);
+		List<Recomendacao> recomendacoesRanqueadas = ranquearRecomendacoes(recomendacoes, topN);
+		
+		registrarRecomendacaoNoHistorico(usuario, recomendacoesRanqueadas);
+		notificarSeNotificacaoHabilitada(usuario, recomendacoesRanqueadas);
+		
+		return recomendacoesRanqueadas;
+	}
 
+	/**
+	 * Método que retorna uma recomendação de forma aleatória dentre os filmes filtrados.
+	 * @param usuario
+	 * @return
+	 */
 	public Optional<Recomendacao> recomendarFilmeAleatorio(Usuario usuario) {
 		List<Filme> catalogo = buscarCatalogo();
 		List<Filme> filmesFiltrados = filtroFilmes.filtrar(catalogo, usuario.getPerfil());
