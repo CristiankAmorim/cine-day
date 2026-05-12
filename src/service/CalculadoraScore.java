@@ -52,7 +52,7 @@ public class CalculadoraScore {
 		return (somaDosPesos / generos.size()) * SCORE_MAXIMO;
 	}
 	
-	private double calcularScoreDaDuracao(Filme filme, PerfilCinefilo perfil) {
+	public double calcularScoreDaDuracao(Filme filme, PerfilCinefilo perfil) {
 		int duracaoDoFilme = filme.getDuracaoMinutos();
 		int duracaoMinimaPreferida = perfil.getDuracaoMinimaMinutos();
 		int duracaoMaximaPreferida = perfil.getDuracaoMaximaMinutos();
