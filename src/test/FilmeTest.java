@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import model.Filme;
@@ -18,6 +19,8 @@ import model.enums.ClassificacaoEtaria;
 import model.enums.Genero;
 import model.enums.Idioma;
 
+@Tag("unitario")
+@DisplayName("Filme - teste de atributos")
 public class FilmeTest {
 
 	private Filme filme;
