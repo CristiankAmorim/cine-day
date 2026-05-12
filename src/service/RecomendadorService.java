@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import model.Filme;
@@ -13,6 +14,7 @@ import util.GeradorAleatorio;
 
 public class RecomendadorService {
 
+	private static final Logger logger = Logger.getLogger(RecomendadorService.class.getName());
 	
 	private CatalogoFilmesAPI catalogoAPI;
 	private HistoricoUsuarioRepository historicoUsuario;
@@ -78,7 +80,7 @@ public class RecomendadorService {
 			List<Filme> filmes = catalogoAPI.buscarTodos();
 			return filmes != null ? filmes : Collections.emptyList();
 		} catch(Exception e) {
-			System.out.println("Falha ao buscar o catálogo: " + e.getMessage());
+			logger.warning("Falha ao buscar o catálogo: " + e.getMessage());
 			return Collections.emptyList();
 		}
 	}
@@ -109,19 +111,19 @@ public class RecomendadorService {
 		try {
 			historicoUsuario.registrarRecomendacao(usuario, recomendacoes);
 		} catch(Exception e) {
-			System.out.println("Falha ao registrar recomendação no histórico: " + e.getMessage());
+			logger.warning("Falha ao registrar recomedações no histórico: " + e.getMessage());
 		}
 	}
 	
 	private void notificarSeNotificacaoHabilitada(Usuario usuario, List<Recomendacao> recomendacoes) {
 		if(!usuario.isNotificacoesHabilitadas()) {
-			System.out.println("As notificações não estão habilitadas");
+			logger.warning("As notificações estão desabilitadas");
 		}
 		
 		try {
 			notificadorPush.enviarNotificacao(usuario, recomendacoes);
 		} catch (Exception e) {
-			System.out.println("Falha ao enviar notificação: " + e.getMessage());
+			logger.warning("Falha ao enviar a notificação: " + e.getMessage());
 		}
 	}
 	
