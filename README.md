@@ -57,3 +57,6 @@ O projeto aplica os princípios SOLID por meio da separação de responsabilidad
 Conclusão
 
 O projeto permitiu aplicar conceitos de orientação a objetos, arquitetura de software e testes automatizados em um sistema modular e organizado.
+
+
+Projeto desenvolvido por: Cristian Amorim e Douglas Rufino.
