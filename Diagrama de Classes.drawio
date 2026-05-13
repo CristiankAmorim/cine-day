@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="t19DFTSmI0evU1gcJvNj">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QWyiMow7yweCD0dVzBDW-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="PerfilCinefilo" vertex="1">
+          <mxGeometry height="30" width="120" x="-20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-28" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="-pesoDoGenero : Map&amp;lt;Genero, Double&amp;gt;&lt;br&gt;- duracaoMinimaMinutos : int&lt;br&gt;- duracaoMaximaMinutos : int&lt;br&gt;- classificacaoMaxima : ClassificacaoEtaria&lt;br&gt;- idiomasAceitos : List&amp;lt;Idioma&amp;gt;&lt;br&gt;- historicoFilmesAssistidos : Set&amp;lt;Filme&amp;gt;&lt;br&gt;- notasFilmes : Map&amp;lt;Filme, Integer&amp;gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;inserirPesoDoGenero()&lt;br&gt;+ inserirFaixaDeDuracao()&lt;br&gt;+ atribuirNotaAoFilme()&lt;br&gt;+ marcarFilmeComoAssistido()&lt;br&gt;+ adicionarIdioma()&lt;br&gt;+ filmeJaAssistido()&lt;br&gt;+ verificarNotaDoFilme()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="265" x="-90" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RecomendadorService." vertex="1">
+          <mxGeometry height="40" width="230" x="40" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-62" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-20.000000000000227" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-63" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="585" as="sourcePoint" />
+            <mxPoint x="850" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-64" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="574.29" as="sourcePoint" />
+            <mxPoint x="1000" y="450.00428571428574" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="- catalogoAPI : CatalogoFilmesAPI&lt;br&gt;- historicoUsuario : HistoricoUsuarioRepository&lt;br&gt;- notificadorPush : NotificadorPush&lt;br&gt;- geradorAleatorio : GeradorAleatorio&lt;br&gt;- calculadoraScore : CalculadoraScore&lt;br&gt;- filtroFilmes : FiltroFilmes&lt;br&gt;-----------------------------------&lt;br&gt;+ recomendar()&lt;br&gt;+ recomendarFilmeAleatorio()" vertex="1">
+          <mxGeometry height="160" width="230" x="40" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="FilmeRespository&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="240" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-33" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="+ buscarTodos()" vertex="1">
+          <mxGeometry height="100" width="120" x="240" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="HistoricoRepository&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-36" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="QWyiMow7yweCD0dVzBDW-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="+ registrarRecomendacao()" vertex="1">
+          <mxGeometry height="115" width="140" x="480" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Filme" vertex="1">
+          <mxGeometry height="60" width="220" x="470" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-39" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="- id : String&lt;br&gt;- titulo : String&lt;br&gt;- ano : int&lt;br&gt;- duracaoMinutos : int&lt;br&gt;- generos : List&amp;lt;Genero&amp;gt;&lt;br&gt;- classificacao : ClassificacaoEtaria&lt;br&gt;- idioma : Idioma&lt;br&gt;- popularidade : int" vertex="1">
+          <mxGeometry height="170" width="220" x="470" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-61" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Usuario" vertex="1">
+          <mxGeometry height="60" width="150" x="110" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="- id : int&lt;br&gt;- nome : String&lt;br&gt;- idade : int&lt;br&gt;- perfil : PerfilCinefilo&lt;br&gt;- notificacoesHabilitadas : boolean" vertex="1">
+          <mxGeometry height="140" width="150" x="110" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-43" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.863;entryY=1.018;entryDx=0;entryDy=0;entryPerimeter=0;" target="QWyiMow7yweCD0dVzBDW-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-46" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="&#xa;&lt;span&gt;- filme : Filme&lt;/span&gt;&lt;br&gt;&lt;span&gt;- score : double&lt;/span&gt;&lt;br&gt;&lt;span&gt;- justificativa : String&lt;/span&gt;&lt;br&gt;&lt;span&gt;-------------------------&lt;/span&gt;&lt;br&gt;&lt;span&gt;+ getFilme()&lt;/span&gt;&lt;br&gt;&lt;span&gt;+ getScore()&lt;/span&gt;&lt;br&gt;&lt;span&gt;+ getJustificativa()&lt;/span&gt;&#xa;&#xa;" vertex="1">
+          <mxGeometry height="200" width="200" x="400" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-48" edge="1" parent="1" source="QWyiMow7yweCD0dVzBDW-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RECOMENDACAO" vertex="1">
+          <mxGeometry height="50" width="200" x="400" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="CalculadoraScore" vertex="1">
+          <mxGeometry height="50" width="220" x="-250" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="+ calcularScore()" vertex="1">
+          <mxGeometry height="110" width="220" x="-250" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="FiltroFilmes" vertex="1">
+          <mxGeometry height="50" width="220" x="740" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="+ filtrar()&lt;br&gt;- naoFoiAssistido()&lt;br&gt;- classificacaoAceitavel()&lt;br&gt;- idiomasAceitos()&lt;br&gt;- nenhumGeneroBloqueado()" vertex="1">
+          <mxGeometry height="110" width="220" x="740" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&#xa;+ enviarNotificacao()&#xa;&#xa;" vertex="1">
+          <mxGeometry height="72.5" width="190" x="690" y="187.5" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-57" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="NotificadorPush&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="190" x="690" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-59" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="GeradorAleatorio&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="840" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="QWyiMow7yweCD0dVzBDW-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&#xa;+ sortearNumeroInteiro()&#xa;&#xa;" vertex="1">
+          <mxGeometry height="80" width="200" x="840" y="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
