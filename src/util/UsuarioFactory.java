@@ -47,6 +47,7 @@ public class UsuarioFactory {
         perfil.inserirPesoDoGenero(Genero.COMEDIA, 0.8);
         perfil.inserirPesoDoGenero(Genero.DRAMA, 0.3);
         perfil.inserirPesoDoGenero(Genero.TERROR, 0.1);
+        perfil.inserirPesoDoGenero(Genero.FICCAO_CIENTIFICA, 0.1);
         perfil.inserirFaixaDeDuracao(80, 130);
         perfil.setClassificacaoMaxima(ClassificacaoEtaria.DEZESSEIS);
         perfil.adicinarIdioma(Idioma.INGLES);

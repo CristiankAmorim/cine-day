@@ -118,6 +118,7 @@ public class RecomendadorService {
 	private void notificarSeNotificacaoHabilitada(Usuario usuario, List<Recomendacao> recomendacoes) {
 		if(!usuario.isNotificacoesHabilitadas()) {
 			logger.warning("As notificações estão desabilitadas");
+			return;
 		}
 		
 		try {

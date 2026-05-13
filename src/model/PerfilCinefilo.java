@@ -119,7 +119,7 @@ public class PerfilCinefilo {
 	}
 	
 	public double getPesoDoGenero(Genero genero) {
-		return pesoDoGenero.get(genero);
+		return pesoDoGenero.getOrDefault(genero, 0.5);
 	}
 
 	public int getDuracaoMinimaMinutos() {
